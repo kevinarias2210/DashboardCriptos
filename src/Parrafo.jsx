@@ -1,7 +1,5 @@
-function Parrafo() {
+export default function Parrafo({ex}) {
   return (
-    <div>Parrafo</div>
+    <button onClick={ex}>Aumentar</button>
   )
 }
-
-export default Parrafo
