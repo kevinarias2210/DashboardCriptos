@@ -15,7 +15,6 @@ export default function App() {
   }, [])
   return (
     <div className='App'>
-      <h1>Coin Market</h1>
       <TableCoins coins={coins}/>
     </div>
   )

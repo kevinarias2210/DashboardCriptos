@@ -1,1 +1,6 @@
-
+.coin_image_container{
+    margin: auto;
+}
+.coin_image_container img{
+    width: 15%;
+}
