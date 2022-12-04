@@ -1,5 +1,6 @@
 import React from "react";
-import "./tableCoins.css"
+import "./tableCoins.css";
+import CoinRow from "./CoinRow";
 
 function TableCoins({ coins }) {
   console.log(coins);
@@ -7,12 +8,17 @@ function TableCoins({ coins }) {
     <table>
       <thead>
         <tr>
-            <td>Moneda</td>
+          <td>#</td>
+          <td>Moneda</td>
+          <td>Precio</td>
+          <td>24h</td>
+          <td>Vol. total</td>
+          <td>Cap. mercado</td>
         </tr>
       </thead>
       <tbody>
-        {coins.map(coin => (
-            <tr>{coin.name}</tr>
+        {coins.map((coin, index) => (
+          <CoinRow coin={coin} key={index} index={index + 1} />
         ))}
       </tbody>
     </table>
