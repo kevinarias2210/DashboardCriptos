@@ -1,17 +1,21 @@
-import {Holis} from './Holis'
-import Parrafo from './Parrafo'
-import {useState} from 'react'
-import "./App.css"
+import {useEffect} from 'react'
+import "./App.css"; 
+import axios from 'axios'; 
+import TableCoins from './TableCoins';
 
 export default function App() {
-  let [count, setCount] = useState(0)
-  //let [x, setx] = useState(10)
-  const accion = _ => setCount(count + 1)
-  //const accion2 = _ => setx(x + 10)
-  return (<>
-    <Holis name="Dylan" num={count}/>
-    <Parrafo ex={accion}/>
-  </>)
-    
+  const getData = async () =>{
+    const res = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=4&page=1&sparkline=false&price_change_percentage=24h")
+    console.log(res.data);
+  }
+  useEffect(()=>{
+    getData(); 
+  }, [])
+  return (
+    <div className='App'>
+      <h1>Coin Market</h1>
+      <TableCoins />
+    </div>
+  )
 }
 
