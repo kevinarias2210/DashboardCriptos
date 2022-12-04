@@ -5,7 +5,7 @@ import CoinRow from "./CoinRow";
 function TableCoins({ coins }) {
   console.log(coins);
   return (
-    <table>
+    <table className="table_coins">
       <thead>
         <tr>
           <td>#</td>
