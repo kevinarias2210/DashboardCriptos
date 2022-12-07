@@ -1,6 +1,6 @@
-import "./card.css"
+import "./Card.css"
 
-export function Cards({porcentaje, price}){
+export default function Card({porcentaje, price}){
     return <div className="cont-cards">
         <div className="card">
             <div className="img"></div>

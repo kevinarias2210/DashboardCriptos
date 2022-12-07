@@ -25,7 +25,7 @@ ChartJS.register(
     Filler,
     Legend
 )
-export default function Graph({type = 1, coin = "bitcoin", currency = "usd", color = "#04D99D"}){
+export default function Graph({type = 1, coin = "bitcoin", currency = "usd", days = 30,color = "#04D99D"}){
     const chartStyle = {
         border: {
             display: false
@@ -37,7 +37,7 @@ export default function Graph({type = 1, coin = "bitcoin", currency = "usd", col
             display: false
         }
     }
-    let url = `https://api.coingecko.com/api/v3/coins/${coin}/market_chart?vs_currency=${currency}&days=30&interval=daily`
+    let url = `https://api.coingecko.com/api/v3/coins/${coin}/market_chart?vs_currency=${currency}&days=${days}&interval=daily`
     let data , options
     const [prices, setPrices] = useState()
     const [dates, setDates] = useState()
@@ -70,6 +70,7 @@ export default function Graph({type = 1, coin = "bitcoin", currency = "usd", col
 
             options = {
                 responsive: true,
+                maintainAspectRatio: true,
                 plugins: {
                   legend: {
                     display: false,
@@ -113,6 +114,7 @@ export default function Graph({type = 1, coin = "bitcoin", currency = "usd", col
         case 1:
             options = {
                 responsive: true,
+                maintainAspectRatio: true,
                 plugins: {
                   legend: {
                     display: false,

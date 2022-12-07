@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.App{
+    position: relative;
+}
+main{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 80%;
+    margin: auto;
+}
+.cards_con{
+    max-width: 500px;
+}

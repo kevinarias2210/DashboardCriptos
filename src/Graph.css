@@ -1,3 +1,8 @@
 .graph{
-    width: 90%;
+    position: relative;
+    width: 80%;
+    height: 60px;
+}
+.graph canvas{
+    margin: auto;
 }

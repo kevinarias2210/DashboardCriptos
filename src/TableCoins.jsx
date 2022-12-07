@@ -14,6 +14,7 @@ function TableCoins({ coins }) {
           <td>24h</td>
           <td>Vol. total</td>
           <td>Cap. mercado</td>
+          <td>Ultimos 7 dias</td>
         </tr>
       </thead>
       <tbody>

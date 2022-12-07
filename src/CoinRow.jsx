@@ -1,5 +1,6 @@
 import React from "react";
 import "./coinRow.css"
+import Graph from './Graph'
 
 export default function CoinRow({ coin, index }) {
   console.log(index);
@@ -7,9 +8,6 @@ export default function CoinRow({ coin, index }) {
     <tr>
       <td>{index}</td>
       <td>
-        <span>
-            {coin.name}
-        </span>
         <div className="coin_image_container">
             <img src={coin.image} alt={coin.name} />
         </div>
@@ -18,6 +16,7 @@ export default function CoinRow({ coin, index }) {
       <td>{coin.market_cap_change_percentage_24h}%</td>
       <td>{coin.total_volume}US$</td>
       <td>{coin.market_cap}US$</td>
+      <td><Graph coin={coin.id} days={7}/></td>
     </tr>
   );
 }

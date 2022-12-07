@@ -3,6 +3,9 @@ import "./App.css";
 import axios from 'axios'; 
 import CardPrincipal from './CardPrincipal';
 import TableCoins from './TableCoins';
+import Card from './Card'
+import Convert from './Convert';
+import Footer from './Footer'
 
 export default function App() {
   const [coins, setCoins] = useState([])
@@ -16,8 +19,17 @@ export default function App() {
   }, [])
   return (
     <div className='App'>
-      <CardPrincipal/>
+      <main>
+        <CardPrincipal/>
+        <div className="cards_con">
+          <Card/>
+          <Card/>
+          <Card/>
+        </div>
+      </main>
+      <Convert/>
       <TableCoins coins={coins}/>
+      <Footer/>
     </div>
   )
 }
