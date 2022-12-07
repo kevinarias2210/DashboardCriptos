@@ -1,18 +1,22 @@
-import {Holis} from './Holis'
-import Parrafo from './Parrafo'
-import {useState} from 'react'
-import "./App.css"
-import Graph from './Graph'
+import {useEffect, useState} from 'react'
+import "./App.css"; 
+import axios from 'axios'; 
+import CardPrincipal from './CardPrincipal';
 
 export default function App() {
-  let [count, setCount] = useState(0)
-  //let [x, setx] = useState(10)
-  const accion = _ => setCount(count + 1)
-  //const accion2 = _ => setx(x + 10)
-  return (<>
-    <Graph coin="ethereum" type={0}/>
-    <Graph currency="usd" type={1}/>
-  </>)
-    
+  const [coins, setCoins] = useState([])
+  const getData = async () =>{
+    const res = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=4&page=1&sparkline=false&price_change_percentage=24h")
+    console.log(res.data);
+    setCoins(res.data);
+  }
+  useEffect(()=>{
+    getData(); 
+  }, [])
+  return (
+    <div className='App'>
+      <CardPrincipal/>
+    </div>
+  )
 }
 
