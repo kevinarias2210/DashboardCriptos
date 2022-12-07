@@ -1,0 +1,36 @@
+.card{
+    display: flex;
+    background-color: #02735E;
+    height: 100px;
+    width: 280px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.price{
+    font-size: 1rem;
+    color: white;
+    margin-left: 20px;
+}
+.porcentajes{
+    font-size: 1rem;
+    padding-bottom: 10px;
+    color: red;
+    background-color: white;
+    height: 15px;
+    width: auto;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.img{
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 10px;
+}
