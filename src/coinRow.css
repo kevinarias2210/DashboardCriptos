@@ -1,0 +1,10 @@
+.coin_image_container{
+    margin: auto;
+}
+.coin_image_container img{
+    width: 15%;
+    margin-left: 2%;
+}
+td{
+    text-align: center;
+}
