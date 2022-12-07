@@ -6,6 +6,7 @@ import TableCoins from './TableCoins';
 import Card from './Card'
 import Convert from './Convert';
 import Footer from './Footer'
+import Header from './Header'
 
 export default function App() {
   const [coins, setCoins] = useState([])
@@ -19,6 +20,7 @@ export default function App() {
   }, [])
   return (
     <div className='App'>
+      <Header/>
       <main>
         <CardPrincipal/>
         <div className="cards_con">
