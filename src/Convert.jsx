@@ -36,7 +36,7 @@ export default function Convert() {
 
         <FaExchangeAlt className="icono" />
 
-        <InputConvert coin={coin} />
+        <InputConvert coin={coin} sel="eth"/>
       </div>
     </div>
   );

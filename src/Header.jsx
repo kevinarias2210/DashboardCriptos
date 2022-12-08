@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import { useTheme } from './Context/ThemeProvider';
 
-const Header = () => {
+export default function Header(){
   const {theme, toggleTheme} = useTheme();
   return (
     <header className='app-header'>
@@ -18,4 +18,3 @@ const Header = () => {
     </header>
   )
 }
-export {Header};

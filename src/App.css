@@ -7,14 +7,19 @@
     position: relative;
 }
 main{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    place-items: center;
     gap: 30px;
-    width: 80%;
+    width: calc(80% + 30px);;
     margin: auto;
+    padding: 50px 0;
 }
 .cards_con{
-    max-width: 500px;
+    width: 90%;
+    height: 509px;
+    display: grid;
+    grid: repeat(3,1fr) / 1fr;
+    align-self: stretch;
+    gap: 20px;
 }

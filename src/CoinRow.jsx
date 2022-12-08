@@ -9,7 +9,7 @@ export default function CoinRow({ coin, index }) {
       <td>{index}</td>
       <td>
         <div className="coin_image_container">
-            <img src={coin.image} alt={coin.name} />
+            <img src={coin.image} title={coin.name} alt={coin.name} />
         </div>
       </td>
       <td>{coin.current_price}US$</td>
