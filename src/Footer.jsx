@@ -6,6 +6,7 @@ import LogoBrayan from './img/LogoBrayan.svg';
 import LogoCamila from './img/LogoCamila.svg';
 import LogoJesus from './img/LogoJesus.svg';
 import LogoNicolas from './img/LogoNicolas.svg';
+import LogoDruck from './img/LogoDruck.jpeg';
 
 const Footer = () => {
     return (
@@ -31,7 +32,7 @@ const Footer = () => {
                     <img src={LogoJesus} alt="logo Jesus" />
                     <img src={LogoAlejandro} alt="logo Alejandro" />
                     <img src={LogoNicolas} alt="logo Nicolas" />
-                    <img src={LogoNicolas} alt="logo" />
+                    <img src={LogoDruck} alt="logo Druck" />
                 </div>
             </div>
         </div>

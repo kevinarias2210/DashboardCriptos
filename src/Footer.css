@@ -10,7 +10,7 @@ body{
 .Footer{
     height: auto;
     width: 100%;
-    padding: 15px;
+    padding: 40px 15px;
     background-color: #01403A;
     display: grid;
     grid-auto-columns: 1rem;
@@ -28,20 +28,33 @@ body{
     max-width: 90%;
     margin: auto;
 }
+.footer-p p{
+    font-size: 1.2rem;
+}
 .footer-c{
     width: 100%;
     display: flex;
     flex-direction: column;
-    text-align: right;
+    text-align: center;
+}
+.footer-c p:first-of-type{
+    font-size: 1.8rem;
+}
+.footer-c p:last-of-type{
+    font-size: 1.4rem;
 }
 .footer-down{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
 }
 .footer-down p{
     margin-right: 25px;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.Footer img:last-of-type{
+    height: 60px;
 }
 @media screen and (max-width: 768px) {
     .Footer{

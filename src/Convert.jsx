@@ -5,7 +5,9 @@ import { FaExchangeAlt } from "react-icons/fa"; // Icono
 import "./Convert.css"; // Estilos
 
 export default function Convert() {
-  const [coin, setCoin] = useState([]);
+  const [coin, setCoin] = useState([])
+  const [selCoin1, setSelCoin1] = useState("btc")
+  const [selCoin2, setSelCoin2] = useState("eth")
 
   // Función asíncrona para obtener los datos de la API
   const getData = async () => {
@@ -32,11 +34,11 @@ export default function Convert() {
       <h2>Comparación de Monedas</h2>
 
       <div className="input-convert">
-        <InputConvert coin={coin} />
+        <InputConvert coin={coin} fun={setSelCoin1} other={selCoin2} />
 
         <FaExchangeAlt className="icono" />
 
-        <InputConvert coin={coin} sel="eth"/>
+        <InputConvert coin={coin} sel="eth" fun={setSelCoin2} other={selCoin1}/>
       </div>
     </div>
   );

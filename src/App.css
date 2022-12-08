@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 .App{
     position: relative;
@@ -22,4 +23,14 @@ main{
     grid: repeat(3,1fr) / 1fr;
     align-self: stretch;
     gap: 20px;
+}
+.green, .red{
+    font-weight: bold;
+}
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
 }

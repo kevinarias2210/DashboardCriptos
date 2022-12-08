@@ -1,3 +1,6 @@
+:root{
+  --url: "ds";
+}
 .contenedor {
   background-color: rgb(4 217 157 / 0.21);
   padding: 20px 30px 30px;
@@ -74,17 +77,14 @@ select::-ms-expand {
   position: relative;
   width: 100%;
 }
-.select::before{
-  content: "";
+.select img{
   position: absolute;
-  display: block;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   inset: 0;
   margin: auto;
   margin-left: 15px;
-  background: blue;
   z-index: 10;
 }
 .select::after {

@@ -15,19 +15,18 @@
 .con-main{
     place-self: stretch;
     display: grid;
-    grid: 35px 1fr / 1fr;
+    grid: 30px 1fr / 1fr;
 }
 .con-main .graph{
-    width: 100%;
+    width: 70%;
     height: 90%;
-    align-self: end;
+    place-self: end center ;
     background: white;
     border-radius: 5px;
     margin: 0;
 }
 .graph canvas{
     height: 100%;
-    margin: 0;
 }
 .con-title{
     display: grid;
