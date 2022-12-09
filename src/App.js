@@ -17,7 +17,7 @@ export default function App() {
     /* const res = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=4&page=1&sparkline=false&price_change_percentage=24h")
     console.log(res.data);
     setCoins(res.data); */
-    const response = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=4&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C90d%2C1y")
+    const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${selCur}&order=market_cap_desc&per_page=4&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C90d%2C1y`)
     const json = await response.json()
     const response_cur = await fetch("https://api.coingecko.com/api/v3/simple/supported_vs_currencies")
     const cur = await response_cur.json()
@@ -27,6 +27,9 @@ export default function App() {
   useEffect(() => {
     getData()
   },[])
+  useEffect(() => {
+    getData()
+  },[selCur])
   /* async function getApi(){
     /* fetch("https://api.coingecko.com/api/v3/simple/price?idszfsdf")
     .then(response => response.json())
@@ -50,9 +53,9 @@ export default function App() {
       <main>
         <CardPrincipal json={coins[0]} cur={selCur}/>
         <div className="cards_con">
-          { coins.map(({symbol, image, current_price,price_change_percentage_30d_in_currency},index) =>{
+          { coins.map(({id,symbol, image, current_price,price_change_percentage_30d_in_currency},index) =>{
             if(index != 0) {
-             return <Card key={index} price={`${symbol} - ${current_price} ${selCur} `} porcentaje={deleteDec(price_change_percentage_30d_in_currency,2)} img={image}/>
+             return <Card key={index} price={`${symbol} - ${current_price} ${selCur} `} porcentaje={deleteDec(price_change_percentage_30d_in_currency,2)} img={image} coinId={id} cur={selCur}/>
             }
           })
           }

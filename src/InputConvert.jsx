@@ -1,15 +1,17 @@
 import React, {useState, useRef, useEffect} from "react";
 import "./Convert.css";
+import {deleteDec} from './App'
 
-export default function InputConvert({ coin,  sel = "btc", fun, other,text }) {
+export default function InputConvert({ coin,  sel = "btc", fun, other,text, type = 1, result = 0}) {
   const selRef = useRef(null)
   const [selVal, setSelVal] = useState(sel)
- 
 
   return (
     <>
       <div className="input">
-        <input type="number" placeholder="0" onChange={e => text(e.target.value)}/>
+        {(type == 0) ? <input type="number" placeholder="0" onChange={e => {text(parseInt(e.target.value))}}/>
+        : <input type="number" placeholder="0" value= {deleteDec(result, 4)} readOnly={true}/>}
+        
         <div data-content="gg" className="select">
           <img src="" alt="" />
           <select value={selVal} ref={selRef} onChange={() => {
