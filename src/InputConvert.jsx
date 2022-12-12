@@ -9,10 +9,10 @@ export default function InputConvert({ coin,  sel = "btc", fun, other,text, type
   return (
     <>
       <div className="input">
-        {(type === 0) ? <input type="number" placeholder="0" onChange={e => {text(parseInt(e.target.value))}}/>
-        : <input type="number" placeholder="0" value= {deleteDec(result, 4)} readOnly={true}/>}
+        {(type === 0) ? <input type="number" placeholder="0" onChange={e => {text(parseFloat(e.target.value))}}/>
+        : <input type="number" placeholder="0" value={deleteDec(result, 4)} readOnly={true}/>}
         
-        <div data-content="gg" className="select">
+        <div className="select">
           <img src="" alt="" />
           <select value={selVal} ref={selRef} onChange={() => {
               setSelVal(selRef.current.value)
