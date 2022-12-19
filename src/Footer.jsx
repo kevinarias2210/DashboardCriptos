@@ -8,6 +8,8 @@ import LogoJesus from './img/LogoJesus.svg';
 import LogoNicolas from './img/LogoNicolas.svg';
 import LogoDruck from './img/LogoDruck.jpeg';
 
+/*En este componente solo se estan agregando el css e ingformaciones.*/
+
 const Footer = () => {
     return (
         <div className="Footer">

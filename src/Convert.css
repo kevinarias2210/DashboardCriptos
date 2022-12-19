@@ -2,11 +2,12 @@
   --url: "ds";
 }
 .contenedor {
-  background-color: rgb(4 217 157 / 0.21);
+  background-color: #d75412cb;
   padding: 20px 30px 30px;
   border-radius: 10px;
   width: 85%;
   margin: 5vh auto;
+  box-shadow: -2px -6px 15px 2px grey;
 }
 
 .contenedor h2 {
@@ -103,7 +104,7 @@ select::-ms-expand {
 }
 
 .select:hover::after {
-  color: #02735e;
+  color: #d75412;
 }
 
 .icono {

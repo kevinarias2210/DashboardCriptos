@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import "./App.css"; 
 import { Line } from "react-chartjs-2";
-import axios from 'axios'; 
+import axios from 'axios';/*Axios es una biblioteca que permite hacer peticiones http */ 
 import CardPrincipal from './CardPrincipal';
 import TableCoins from './TableCoins';
 import Card from './Card'
@@ -76,4 +76,5 @@ export function deleteDec(val, decimal) {
 export function colorDec(num){
   return num > 0 ? "green" : "red"
 }
-export const numberF = Intl.NumberFormat("es-ES")
+export const numberF = Intl.NumberFormat("es-ES") /*En esta constante se está guardando una funcion o metodo reservada de js que
+hace es transformar un entero a un tipo de moneda*/

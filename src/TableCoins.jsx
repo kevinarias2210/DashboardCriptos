@@ -1,7 +1,9 @@
 import React from "react";
 import "./tableCoins.css";
-import CoinRow from "./CoinRow";
+import CoinRow from "./CoinRow";//Llama el componente coinrow
 
+/*En este componente trae el atributo de monedas, se crea una tabla. Luego mapea las monedas y el index del objeto que traimos de la
+API*/
 function TableCoins({ coins }) {
   console.log(coins);
   return (

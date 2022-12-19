@@ -1,8 +1,10 @@
-import { FaPlay } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";//Importan otro modulo, que es una imagen svg
 import './cardPrincipal.css'
-import { deleteDec, colorDec } from './App'
-import Graph from "./Graph";
+import { deleteDec, colorDec } from './App'//Se llama las funciones de deleteDec que trae el valor decimal y colorDec que cuando cambia de color si el valor no es igual a 0
+import Graph from "./Graph";//Se trae el componente Grafico
 
+
+/*Acá en esta funcion traemos el objeto json que contiene todos los atributos de las criptomonedas */
 function CardPrincipal({ json: { id,
     symbol,
     current_price,
@@ -20,6 +22,8 @@ function CardPrincipal({ json: { id,
         <>
             <article className="cripto-first">
                 <div className="cripto-title">
+                    {/*En estas etiquetas se están accediendo a esos atributos, gracias a esos corchetes y el nombre del atributo
+                    donde se muestra la imagen, el simbolo, el precio de la moneda y el tipo de moneda*/}
                     <img src={image} alt="Icono de cripto" />
                     <h2>{symbol} - {current_price} {cur}</h2>
                     {/* <select name="select-percentage" id="select-percentage">
@@ -27,6 +31,8 @@ function CardPrincipal({ json: { id,
                         <option value="value2">18%</option>
                         <option value="value3">20%</option>
                     </select> */}
+
+                    {/*En este h2 trae el icono svg, con su clase, trae la funcion colorDec cuando llama el cambio del porcentaje y los coloca en decimales*/}
                     <h2><FaPlay className={`icon-arrow ${colorDec(price_change_percentage_30d_in_currency)}`}/>{deleteDec(price_change_percentage_30d_in_currency,2)}%</h2>
                 </div>
                 <div className="graphic">
@@ -46,7 +52,7 @@ function CardPrincipal({ json: { id,
                         </thead>
                         <tbody>
                             <tr>
-                                 <td className={colorDec(price_change_percentage_1h_in_currency)}>{deleteDec(price_change_percentage_1h_in_currency, 2)}%</td>
+                                <td className={colorDec(price_change_percentage_1h_in_currency)}>{deleteDec(price_change_percentage_1h_in_currency, 2)}%</td>
                                 <td className={colorDec(price_change_percentage_24h_in_currency)}>{deleteDec(price_change_percentage_24h_in_currency, 2)}%</td>
                                 <td className={colorDec(price_change_percentage_7d_in_currency)}>{deleteDec(price_change_percentage_7d_in_currency, 2)}%</td>
                                 <td className={colorDec(price_change_percentage_30d_in_currency)}>{deleteDec(price_change_percentage_30d_in_currency, 2)}%</td>

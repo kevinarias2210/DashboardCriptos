@@ -1,7 +1,8 @@
 import "./Graph.css"
-import {useEffect, useState, useRef} from 'react'
-import { Line } from "react-chartjs-2";
+import {useEffect, useState, useRef} from 'react' //En el hook de usseEffect espera a que se reenderice todo el codigo para despues ejecutar su funcion.
+import { Line } from "react-chartjs-2"; //En esta linea se importa un modulo de node_modules
 
+/*En este import tambien se están trayendo modulos que al parecer hacen un tipo de dibujado*/
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -15,6 +16,7 @@ import {
   } from 'chart.js';
 import moment from "moment/moment";
 
+/*Esten modulo registra todo los modulos, como si lo guardara con solo el ChartJS*/
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -25,6 +27,8 @@ ChartJS.register(
     Filler,
     Legend
 )
+
+/*Este componentre trae el typo, la moneda, el tipo de moneda, los dias y el color y en la constante de se define unos displays*/
 export default function Graph({type = 1, coin = "bitcoin", currency = "usd", days = 30,color = "#04D99D"}){
     const chartStyle = {
         border: {
@@ -37,11 +41,15 @@ export default function Graph({type = 1, coin = "bitcoin", currency = "usd", day
             display: false
         }
     }
-    let url = `https://api.coingecko.com/api/v3/coins/${coin}/market_chart?vs_currency=${currency}&days=${days}&interval=daily`
-    let data , options
+    let url = `https://api.coingecko.com/api/v3/coins/${coin}/market_chart?vs_currency=${currency}&days=${days}&interval=daily` //Se trae el link del api pero mostrand lo que se declaró anteriormente en el componente 
+    let data , options //Se crean dos variables
+    /*Estados*/
     const [prices, setPrices] = useState()
     const [dates, setDates] = useState()
     const [gradient, setGradient] = useState()
+    /*Acá se está diciendo que se ejecute esta funcion de manera asincrona, que esperemos que respone obtenga la url y que los datos
+    que tiene la url se almacene en el json. En el estado actual de los precios se traerá un item aleatorio del 0 al 1 y en el estado
+    actual de los datos se traeran y se mostraran de mes y dia, en el catch mostrará en la consola el error */
     async function getData(){
         try{
             const response = await fetch(url)
@@ -52,8 +60,10 @@ export default function Graph({type = 1, coin = "bitcoin", currency = "usd", day
             console.log("error:",e)
         }
     }
-    const chartRef = useRef(null);
+    const chartRef = useRef(null);//Referencia nulo
     
+    /*Cuando termina el renderizado de todo este codigo, pasará esta funcion, obteniendo los datos de los precios y la fecha,
+    creará un canvas, con ciertas dimenciones y ciertos colores.*/
     useEffect(_ => {
         getData()
         const canvas = chartRef.current.firstChild
@@ -64,7 +74,8 @@ export default function Graph({type = 1, coin = "bitcoin", currency = "usd", day
     },[])
     
     
-    
+    /*Pasamos un switch que recibe el tipo, lo que hace es que en su valor buleano reciba ciertos estilos como el responsive
+    alguns displays y algunos colores*/
     switch(type){
         case 0:
 
@@ -141,6 +152,7 @@ export default function Graph({type = 1, coin = "bitcoin", currency = "usd", day
               }
             break
     }
+    /*Retorna el elemento que hace referencia, en line si pasa los datos y las opciones*/
     return (
         <div ref={chartRef} className="graph">
             <Line data={data} options={options}/>

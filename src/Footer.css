@@ -11,7 +11,7 @@ body{
     height: auto;
     width: 100%;
     padding: 40px 15px;
-    background-color: #01403A;
+    background-color: #ff5500;
     display: grid;
     grid-auto-columns: 1rem;
     grid-template-columns: repeat(1, minmax(min(100%, 50%),1fr));
@@ -43,16 +43,7 @@ body{
 .footer-c p:last-of-type{
     font-size: 1.4rem;
 }
-.footer-down{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.footer-down p{
-    margin-right: 25px;
-    font-size: 1.6rem;
-    font-weight: bold;
-}
+
 .Footer img:last-of-type{
     height: 60px;
 }

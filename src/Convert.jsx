@@ -3,8 +3,9 @@ import axios from "axios";
 import InputConvert from "./InputConvert"; // Componente
 import { FaExchangeAlt } from "react-icons/fa"; // Icono
 import "./Convert.css"; // Estilos
-import { object } from "prop-types";
+import { object } from "prop-types"; //Modulo
 
+//Creamos un componente que tiene constantes para cambiar los estados, uno se guarda en un array vacío, monedas que empiezan, y en 0
 export default function Convert() {
   const [coin, setCoin] = useState([])
   const [selCoin1, setSelCoin1] = useState("btc")
@@ -31,6 +32,7 @@ export default function Convert() {
     getData()
   }, []);
 
+  /*En este hook luego de que se renderice recorremos la moneda para que cambie*/
   useEffect(_ => {
     let a,b
     coin.forEach(({symbol, current_price}) =>{
